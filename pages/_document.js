@@ -29,11 +29,6 @@ class MyDocument extends Document {
                 {/* You can use the head tag, just not for setting <title> as it leads to unexpected behavior */}
                 <meta charSet="utf-8"/>
                 <meta
-                    name="viewport"
-                    content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-                />
-
-                <meta
                     name="description"
                     content="A social media site built with Next.js"
                 />

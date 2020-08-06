@@ -13,10 +13,9 @@ import {
 } from 'reactstrap';
 import Link from "next/link";
 
-function Header() {
+function Header({token}) {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen)
-    const isAuthenticated = false;
     return (
         <div>
             <Navbar color="light" light expand="md">
@@ -51,7 +50,7 @@ function Header() {
                         </Nav>
                         <div className="form-inline my-2 my-lg-0">
                             <Nav className="mr-auto" navbar>
-                                {isAuthenticated ? (
+                                {token ? (
                                     <NavItem>
                                         <Link href={"/profile"}>
                                             <a className={'nav-link text-capitalize'}>

@@ -1,17 +1,15 @@
-import React, {useEffect} from "react";
+import React, {useEffect, createContext} from "react";
 import Layout from "../layouts/Master";
-import axios from "axios";
 import {Card, CardBody, CardImg} from "reactstrap";
 import {authInitialProps} from "../lib/auth";
 
-// function Home({products}) {
-function Home({auth}) {
-    console.log(auth)
+
+export default function Home({auth={}, userId, products, token}) {
     return (
-        <Layout>
+        <Layout auth={auth} token={token}>
             <h4>All Products</h4>
             <div className="row row-cols-1 row-cols-md-4">
-                {/*{products.map(({name, avatar, price}, i) => (
+                {products.map(({name, avatar, price}, i) => (
                     <div className={'col mb-4'} key={i}>
                         <Card>
                             <CardImg top width={'100%'} src={avatar} alt={name}/>
@@ -21,7 +19,7 @@ function Home({auth}) {
                             </CardBody>
                         </Card>
                     </div>
-                ))}*/}
+                ))}
             </div>
         </Layout>
     )
@@ -36,4 +34,4 @@ function Home({auth}) {
 
 Home.getInitialProps = authInitialProps();
 
-export default Home;
+

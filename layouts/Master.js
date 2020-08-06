@@ -2,10 +2,10 @@ import React from "react";
 import Header from "./Header";
 import {Container} from "reactstrap";
 
-function Layout({title, children}) {
+function Layout({auth={}, title, children, token=null}) {
     return (
         <>
-            <Header />
+            <Header auth={auth} token={token} />
             <Container>
                 {children}
             </Container>
